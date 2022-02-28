@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ot-client-helper"
-include ':app'
+include ':ot-client-helper'
