@@ -2,6 +2,8 @@ package com.alibaba.sls.othelper;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import com.aliyun.sls.android.producer.Log;
+
 final class SpanImpl implements Span {
     private AtomicBoolean finished = new AtomicBoolean();
 
@@ -38,6 +40,8 @@ final class SpanImpl implements Span {
 
         if (finished.compareAndSet(false, true)) {
             // send data
+            Log log = new Log();
+            OpenTelemetryHelper.send(log);
         }
     }
 

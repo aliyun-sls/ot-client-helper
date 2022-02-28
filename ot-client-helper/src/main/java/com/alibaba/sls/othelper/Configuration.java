@@ -1,18 +1,26 @@
 package com.alibaba.sls.othelper;
 
+import android.content.Context;
+
 class Configuration {
+    private final Context context;
     private final String accessKey;
     private final String securityKey;
     private final String project;
     private final String instanceId;
     private final String traceLogstore;
 
-    Configuration(String accessKey, String securityKey, String project, String instanceId, String propagationContext) {
+    Configuration(Context context, String accessKey, String securityKey, String project, String instanceId, String propagationContext) {
+        this.context = context;
         this.accessKey = accessKey;
         this.securityKey = securityKey;
         this.project = project;
         this.instanceId = instanceId;
         this.traceLogstore = instanceId + "-traces";
+    }
+
+    Context getContext() {
+        return this.context;
     }
 
     String accessKey() {
