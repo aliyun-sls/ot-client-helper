@@ -15,6 +15,11 @@ enum NoopSpan implements Span {
     }
 
     @Override
+    public Span withHost(String host) {
+        return this;
+    }
+
+    @Override
     public Span occurError() {
         return this;
     }
@@ -30,12 +35,12 @@ enum NoopSpan implements Span {
 
     @Override
     public String traceID() {
-        return null;
+        return "";
     }
 
     @Override
     public String spanID() {
-        return null;
+        return "";
     }
 
     @Override

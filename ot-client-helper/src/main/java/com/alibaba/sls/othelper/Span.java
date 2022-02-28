@@ -12,6 +12,8 @@ public interface Span {
 
     Span withResource(String key, String value);
 
+    Span withHost(String host);
+
     Span occurError();
 
     TraceContext traceContext();

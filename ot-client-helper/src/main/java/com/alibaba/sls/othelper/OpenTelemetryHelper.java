@@ -1,10 +1,5 @@
 package com.alibaba.sls.othelper;
 
-import java.io.File;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import android.content.Context;
 
 import com.aliyun.sls.android.producer.Log;

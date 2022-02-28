@@ -3,6 +3,7 @@ package com.alibaba.sls.othelper;
 import static com.alibaba.sls.othelper.Constants.FIELD_ATTRIBUTE;
 import static com.alibaba.sls.othelper.Constants.FIELD_DURATION;
 import static com.alibaba.sls.othelper.Constants.FIELD_END;
+import static com.alibaba.sls.othelper.Constants.FIELD_HOST;
 import static com.alibaba.sls.othelper.Constants.FIELD_KIND;
 import static com.alibaba.sls.othelper.Constants.FIELD_NAME;
 import static com.alibaba.sls.othelper.Constants.FIELD_PARENT_SPAN_ID;
@@ -64,6 +65,12 @@ final class SpanImpl implements Span {
             return this;
         }
         resources.put(key, value);
+        return this;
+    }
+
+    @Override
+    public Span withHost(String host) {
+        commonsValues.put(FIELD_HOST, host);
         return this;
     }
 
