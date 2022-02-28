@@ -12,7 +12,12 @@ public final class NoopSpanBuilder implements SpanBuilder {
     }
 
     @Override
-    public Span build() {
+    public SpanBuilder withKind(SpanKind kind) {
+        return this;
+    }
+
+    @Override
+    public Span start() {
         return NoopSpan.INSTANCE;
     }
 }

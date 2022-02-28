@@ -5,5 +5,7 @@ public interface SpanBuilder {
 
     SpanBuilder withResource(String key, String value);
 
-    Span build();
+    SpanBuilder withKind(SpanKind kind);
+
+    Span start();
 }

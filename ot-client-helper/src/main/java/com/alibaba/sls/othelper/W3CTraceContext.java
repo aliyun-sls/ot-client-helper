@@ -10,11 +10,11 @@ final class W3CTraceContext implements TraceContext {
 
     @Override
     public String contextKey() {
-        return null;
+        return "traceparent";
     }
 
     @Override
     public String contextValue() {
-        return null;
+        return String.format("00-%s-%s-01", span.traceID(), span.traceID());
     }
 }

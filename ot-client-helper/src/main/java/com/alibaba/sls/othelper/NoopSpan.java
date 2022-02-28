@@ -15,12 +15,27 @@ enum NoopSpan implements Span {
     }
 
     @Override
+    public Span occurError() {
+        return this;
+    }
+
+    @Override
     public TraceContext traceContext() {
         return NoopTraceContext.INSTANCE;
     }
 
     @Override
     public void stop() {
+    }
+
+    @Override
+    public String traceID() {
+        return null;
+    }
+
+    @Override
+    public String spanID() {
+        return null;
     }
 
     @Override
