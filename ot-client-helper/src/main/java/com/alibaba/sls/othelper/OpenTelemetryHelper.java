@@ -7,12 +7,14 @@ import com.aliyun.sls.android.producer.LogProducerClient;
 import com.aliyun.sls.android.producer.LogProducerConfig;
 import com.aliyun.sls.android.producer.LogProducerException;
 
+import java.io.File;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class OpenTelemetryHelper {
 
     private static Configuration configuration;
     private static LogProducerClient producerClient;
     private static AtomicBoolean initialized = new AtomicBoolean(false);
-    private static Map<String, String> GLOBAL_RESOURCE = new ConcurrentHashMap<>();
 
     public static void Init(Configuration.Builder builder) {
         if (initialized.compareAndSet(false, true)) {
