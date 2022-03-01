@@ -36,9 +36,11 @@ span.stop();
 |${service}	| 服务名。根据您的实际场景配置。|	Android|
 
 ## FAQ
-1. 如何获取追踪上下文
+* 如何获取追踪上下文
+
 通过`Span.TraceContext()`方法可以获取追踪上下文
 **注：** `Span.TraceContext()`只具备生成Trace上下文能力，并不具备传递上下文的能力，上下文传递需要手动完成
    
-2. 如何设置Span异常
+* 如何设置Span异常
+
 通过`Span.occurError()`方法可以设置当前Span为异常状态
