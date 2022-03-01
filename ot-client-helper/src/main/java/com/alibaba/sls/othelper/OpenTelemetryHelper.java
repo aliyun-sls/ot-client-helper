@@ -1,7 +1,6 @@
 package com.alibaba.sls.othelper;
 
 import android.content.Context;
-
 import com.aliyun.sls.android.producer.Log;
 import com.aliyun.sls.android.producer.LogProducerClient;
 import com.aliyun.sls.android.producer.LogProducerConfig;
@@ -23,26 +22,12 @@ public class OpenTelemetryHelper {
         }
     }
 
-    @Deprecated
-    public static void Init(Context context, String ak, String sk, String endpoint, String project, String instanceId, String serviceName) {
-        Init(context, ak, sk, endpoint, project, instanceId, serviceName, "W3C");
-    }
-
-    @Deprecated
-    public static void Init(Context context, String ak, String sk, String endpoint, String project, String instanceId, String serviceName,
-                            String propagationContext) {
-        if (initialized.compareAndSet(false, true)) {
-            configuration = new Configuration(context, ak, sk, endpoint, project, instanceId, serviceName);
-            initLogProducer(configuration);
-        }
-    }
-
     private static void initLogProducer(Configuration configuration) {
         final Context context = configuration.getContext().getApplicationContext();
         final File path = new File(context.getFilesDir(), String.format("%s/%s", File.separator, "trace_data.dat"));
 
         try {
-            LogProducerConfig config = new LogProducerConfig(context, configuration.project(),
+            LogProducerConfig config = new LogProducerConfig(context, configuration.endpoint(),
                     configuration.project(),
                     configuration.traceLogStore(),
                     configuration.accessKey(),

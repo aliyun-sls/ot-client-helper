@@ -15,6 +15,6 @@ final class W3CTraceContext implements TraceContext {
 
     @Override
     public String contextValue() {
-        return String.format("00-%s-%s-01", span.traceID(), span.traceID());
+        return String.format("00-%s-%s-01", span.traceID(), span.spanID());
     }
 }

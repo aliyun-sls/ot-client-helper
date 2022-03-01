@@ -43,7 +43,7 @@ final class SpanHelper {
 
         char[] result = new char[16];
         toHex(id, result, 0);
-        return new String(result, 0, 8);
+        return new String(result, 0, 16);
     }
 
     private static String generateTraceId(long traceIdLongHighPart, long traceIdLongLowPart) {
@@ -53,7 +53,7 @@ final class SpanHelper {
         char[] chars = new char[32];
         toHex(traceIdLongHighPart, chars, 0);
         toHex(traceIdLongLowPart, chars, 16);
-        return new String(chars, 0, 16);
+        return new String(chars, 0, 32);
     }
 
     private static void toHex(long value, char[] dest, int destOffset) {

@@ -89,7 +89,7 @@ final class SpanImpl implements Span {
 
     @Override
     public void stop() {
-        if (!finished.get()) {
+        if (finished.get()) {
             return;
         }
 
