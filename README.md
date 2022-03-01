@@ -7,7 +7,7 @@ Ot-Client-Helper生成的数据遵循OT格式，追踪数据会上传到SLS Trac
 ## 快速开始
 buid.gradle文件
 ```gradle
- implementation 'com.aliyun.openservices:ot-clien-helper:1.0.0'
+ implementation 'com.aliyun.openservices:ot-clien-helper:1.0.1'
 ```
 
 测试代码
