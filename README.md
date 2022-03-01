@@ -23,9 +23,6 @@ span=span.withAttribute("test3","test5").occurError();
 System.out.println(String.format("%s  %s",span.traceContext().contextKey(),span.traceContext().contextValue()));
 // 创建的Span一定要调用Stop方法
 span.stop();
-
-span.withAttribute("test5","test5");
-span.stop(); 
 ```
 参数介绍
 
