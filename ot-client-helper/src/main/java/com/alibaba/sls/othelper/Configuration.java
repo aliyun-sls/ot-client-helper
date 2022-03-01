@@ -82,11 +82,15 @@ class Configuration {
         private final String endpoint;
         private final String project;
         private final String instanceId;
-        private final String serviceName;
+        private String serviceName;
         private Map<String, String> resources = new ConcurrentHashMap<>();
 
         public static Builder newBuilder(Context context, String ak, String sk, String endpoint, String project, String instanceId, String serviceName) {
             return new Builder(context, ak, sk, endpoint, project, instanceId, serviceName);
+        }
+
+        public static Builder newBuilder(Context context, String ak, String sk, String endpoint, String project, String instanceId) {
+            return new Builder(context, ak, sk, endpoint, project, instanceId);
         }
 
         private Builder(Context context, String ak, String sk, String endpoint, String project, String instanceId, String serviceName) {
@@ -97,6 +101,15 @@ class Configuration {
             this.project = project;
             this.instanceId = instanceId;
             this.serviceName = serviceName;
+        }
+
+        private Builder(Context context, String ak, String sk, String endpoint, String project, String instanceId) {
+            this(context, ak, sk, endpoint, project, instanceId, "Android");
+        }
+
+        public Builder withServiceName(String serviceName) {
+            this.serviceName = serviceName;
+            return this;
         }
 
         public Builder withResources(Map<String, String> resources) {
