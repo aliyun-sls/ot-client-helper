@@ -31,7 +31,7 @@ span.stop();
 
 | 变量 | 说明 | 示例 |
 |---|---|---|
-|${endpoint}	|日志服务的接入地址，格式为https://${region-endpoint}，其中： <br/> ${region-endpoint}：Project访问域名，支持公网和阿里云内网（经典网络、VPC）。更多信息，请参见[服务入口](https://help.aliyun.com/document_detail/29008.htm?spm=a2c4g.11186623.0.0.3b4812faModpH5#reference-wgx-pwq-zdb)。 | https://cn-hangzhou.log.aliyuncs.com|
+|${endpoint}	|日志服务的接入地址，格式为`https://${region-endpoint}`，其中： <br/> `${region-enpoint}` ：Project访问域名，支持公网和阿里云内网（经典网络、VPC）。更多信息，请参见[服务入口](https://help.aliyun.com/document_detail/29008.htm?spm=a2c4g.11186623.0.0.3b4812faModpH5#reference-wgx-pwq-zdb)。 | https://cn-hangzhou.log.aliyuncs.com|
 |${project}|	日志服务Project名称。	| test-project |
 |${instance}|	Trace服务实例名称。	|test-traces|
 |${access-key-id}|	阿里云账号AccessKey ID。<br/> 建议您使用只具备日志服务Project写入权限的RAM用户的AccessKey（包括AccessKey ID和AccessKey Secret）。授予RAM用户向指定Project写入数据权限的具体操作，请参见授权。如何获取AccessKey的具体操作，请参见访问密钥。| 无|
