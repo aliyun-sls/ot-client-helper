@@ -123,7 +123,7 @@ final class SpanImpl implements Span {
         if (!finished.get()) {
             return this;
         }
-        commonsValues.put(FIELD_KIND, kind.name());
+        commonsValues.put(FIELD_KIND, kind.getName());
         return this;
     }
 
