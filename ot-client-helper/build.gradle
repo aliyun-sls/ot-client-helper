@@ -10,7 +10,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,3 +34,12 @@ dependencies {
 
     implementation 'com.aliyun.openservices:aliyun-log-android-sdk:2.6.4'
 }
+
+ext {
+    moduleVersion = android.defaultConfig.versionName
+    moduleName = 'ot-clien-helper'
+}
+
+//====以下是将android library上传到jcenter的脚本
+//apply from: "mavenCentralUpload.gradle"
+apply from: "${project.rootProject.file('maven-publish.gradle')}"
