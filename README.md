@@ -51,24 +51,8 @@ span.stop();
 
 通过`Span.occurError()`方法可以设置当前 Span 为异常状态
 
-- Android 时间和 Server 端时间不一致问题
-  前提： 后端服务在 Response 中返回当前服务端当前时间（以下以 Ok HttpClient 为例）
+- Android 时间和 Server 端时间不一致问题， 具体代码参考 `TimeUtil.getServerTime()`
 
 1. 利用 OKHttp 的 Interceptor 获取 Reponse 中的时间
 2. 利用`SystemClock.elapsedRealtime()`记录手机系统开机时间
 3. 现在服务器时间 = 以前服务器时间 + 现在手机开机时间 - 以前服务器时间的获取时刻的手机开机时间
-
-```java
-Request request = chain.request();
-long startTime = System.nanoTime();
-Response proceed = chain.proceed(request);
-// 以前服务器时间的获取时刻的手机开机时间
-long lastTime = System.nanoTime() - startTime;
-
-//
-diffTime = lastTime - SystemClock.elapsedRealtime();
-
-//当前服务器时间
-serverTime = diffTime + SystemClock.elapsedRealtime()
-
-```
